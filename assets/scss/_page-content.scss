@@ -1,0 +1,920 @@
+// On computer
+@media screen and (min-width : 1000px) {
+    .page-content{
+        margin-top: 100px;
+        height: auto;
+        @include flex (space-between, top);
+        gap: 10px;
+        overflow: hidden;
+        &__left{
+            flex: 22% 0 0 ;
+            width: 90%;
+            .facebook-abbreviations{
+                width: 23% !important;
+                height: 100%;
+                position: fixed;
+                overflow-y: scroll;
+                z-index: 1;
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
+                .abbreviation{
+                    @include flex (start, center);
+                    padding: 16px 0 ;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    &:hover{
+                        background-color:darken($bg-color, 20%);
+                        width: 100%;
+                    }
+                    img{
+                        @include img-user(50%, 40, 40);
+                        padding-left: 10px;
+                    }
+                    i{
+                        @include allicon ($icon-color,33)
+                    }
+                    span{
+                        margin-left: 5px;
+                        color: $icon-color-dont-hover;
+                        font-weight: bold;
+                        font-family: $font-body;
+                    }  
+                }
+                .chow-more{
+                    padding: 16px 0 ;
+                    border-radius: 10px;
+                    i{
+                        margin-left: 6px;
+                        @include allicon (darken($icon-color-dont-hover,80%),33);
+                        @include service(#fff) ;
+                    }
+                    span{
+                        font-weight: bold;
+                        color: $icon-color-dont-hover;
+                        font-family: $font-body;  
+                    }
+                    &:hover{
+                        background-color:darken($bg-color, 20%);
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                    
+                }
+                hr {
+                    margin-top :20px;
+                }
+                .copyright{
+                    @include flex (space-between , center);
+                    flex-direction: column;
+                    margin-top: 80px;
+                    height: 20%;
+                    span{
+                        color: $icon-color;
+                    }
+                    
+                }
+            }
+        }
+        &__middle{
+            width: 650px auto;
+            height: auto;
+            overflow: hidden;   
+            .all-story{
+                position: relative;
+                .i-nx-pr{
+                        .icones{
+                            .icon-previous{
+                                @include icones-nex_previous(800);
+                                left: 50px;  
+                                opacity: 0.7; 
+                            }
+                            .icon-nex{
+                                @include icones-nex_previous(400);
+                                right: 90px;
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                .stories{  
+                    @include flex(start, center);
+                    width: 85%;
+                    padding: 5px;
+                    margin-left: 20px;
+                    // overflow: hidden;
+                    overflow-x: auto;
+                    scroll-behavior: smooth;
+                    .my-story{
+                        width: 120px;
+                        height: 260px;
+                        margin: 3px 30px 0 2px;
+                        cursor: pointer; 
+                        img{
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
+                            width: 120px ;
+                            height: 190px; 
+                        }
+                        .add{
+                            margin-top: -5px;
+                            background-color: #fff;
+                            width: 120px;
+                            height: 69px;
+                            border-bottom-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            h3{
+                                @include flex(center, center);
+                                padding-top: 28px;
+                                color: $icon-color-dont-hover;
+                                font-family: $font-body;
+                                font-size: 18px;                        
+                            }
+                            i{
+                                position: relative;
+                                border-radius: 50%;
+                                color: #fff;
+                                padding: 5px;
+                                background-color: $icon-color;
+                                font-size: 25px;
+                                top: -59px;
+                                left: 45px;
+                            }
+                        }
+                    }
+                    .storries-useres {
+                        @include flex(space-evenly, center);
+                        img{
+                          background-clip: border-box; 
+                          width: 125px; 
+                          border-radius: 15px;
+                          margin-left: 10px;
+                          &:hover{
+                            filter: brightness(80%);
+                          }
+                        }
+                        
+                        margin: 0 5px;
+                        border-radius: 10px;
+                        width: 120px !important;
+                        height: 260px;
+                        cursor: pointer;
+                    }
+                    
+                    .storries-useres .icone-user img {
+                        border-radius: 50%;
+                        padding: 2px;
+                        border: 3px solid #1846c5;
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        cursor: pointer;
+                        top: -90px;
+                        left: -65px;
+                        z-index: 1;
+                    } 
+                    &::-webkit-scrollbar{
+                        width: 0;
+                    }
+                }
+            }        
+
+            .edia{
+                background-color: #ffffff;
+                flex-direction: column;
+                margin-top: 30px;
+                padding:0 55px 0 25px;
+                border-radius: 15px;
+                margin-left: 28px;
+                width: 78%;
+                .input-idia{
+                    padding: 15px 0 ;
+                    @include flex(space-between, center);
+                    img{
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    input{
+                        padding: 10px;
+                        width: 85%;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        background-color: lighten($icon-color-dont-hover,55%) ;
+                        font-size: 22px;
+                    }
+                }
+                .par{
+                    background-color: #ffff;
+                    @include flex (space-between, end);
+                    padding:15px 10px;
+                    div{
+                        cursor: pointer;
+                        i{
+                        font-size: 20px;
+                        margin-right: 5px;
+                        }
+                        span{
+                            font-size: 18px;
+                            font-family: $font-body;
+                            color: $icon-color-dont-hover;
+                            margin-right: 5px;
+                        }
+                    } 
+                    .icon-live{
+                        i{
+                            color: red;
+                        }
+                       
+                    }
+                    .icon-img{
+                        i{
+                            color: #00ff00;
+                        } 
+                    }
+                    .icon-im{
+                        i{
+                            color:rgb(207, 207, 3);
+                        }
+                       
+                    }
+                }
+                    
+            }
+
+            .publ{
+                width: 95%;
+                .publications{
+                    background-color: #ffff;
+                    padding: 15px;
+                    margin: 20px;
+                    border-radius: 10px;
+                    .icon-pu{
+                        @include flex (space-between, center);
+                        i{
+                            font-size: 25px;
+                            color: $icon-color-dont-hover;
+                            cursor: pointer;
+                        }
+                        .ffi{
+                            @include flex (space-between, center);
+                            img{
+                                margin-left: 5px;
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                cursor: pointer;
+                            }
+                            span{
+                                font-size: 22px;
+                                font-weight: 600;
+                                font-family: $font-body;
+                            }
+                        }
+                    }
+                    .title{
+                        margin: 10px 0;
+                        h3{
+                            text-align: end;
+                            font-weight: 700px;
+                            font-family: $font-body;
+                            font-size: 16px;
+                        }                    
+                    }
+                    .photo{
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                    }
+                    hr{
+                        margin-top: 3px;
+                    }
+                    .interaction{
+                        .pub{
+                            margin: 10px 0;
+                            @include flex(end, center);
+                            i{
+                                font-size: 20px;
+                                margin-left: 2px;
+                                cursor: pointer;
+                            }
+                            .lov{
+                                color: $icon-color;
+                            }
+                            .like{
+                                color: rgb(255, 32, 32);
+                            }
+                        }
+                        .pub-1{
+                            @include flex(space-evenly , center);
+                            div{
+                                margin-top: 5px;
+                                @include flex (center, center);
+                                cursor: pointer;
+                               i{
+                                    font-size: 25px;
+                                    color: $icon-color-dont-hover;
+                                } 
+                                span{
+                                    user-select: none;
+                                    margin-left: 3px;
+                                    color: $icon-color-dont-hover;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+
+        }
+        &__right{
+            flex:25% 0 0;
+            width: 100%;
+            .facebook-abbreviations{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                overflow-y: scroll;
+                z-index: 1;               
+                @include abbreviations-rigth;  
+                &::-webkit-scrollbar{
+                width: 0;
+                }
+            }
+        }
+    }
+}
+
+// On Tablets
+@media screen and (min-width : 850px) and (max-width : 1000px) {
+    .page-content{
+        max-width: 100%;
+        margin-top: 80px;
+        height: auto;
+        @include flex (space-between, top);
+        gap: 10px;
+        &__left{
+            display: none;
+        }
+        &__middle{
+            width: 650px;
+            height: auto;
+            overflow: hidden;
+
+            .all-story{
+                position: relative;
+                .i-nx-pr{
+                    .icones{
+                        .icon-previous{
+                            @include icones-nex_previous(800);
+                            left: 50px;   
+                        }
+                        .icon-nex{
+                            @include icones-nex_previous(400);
+                            right: 90px;
+                        }
+                    }    
+                }
+                .stories{
+                    @include flex(start, center);
+                    width: 85% !important;
+                    padding: 5px;
+                    margin-left: 20px;
+                    overflow: hidden;
+                    overflow-x: scroll;
+                    scroll-behavior: smooth;
+                    .my-story{
+                        width: 120px;
+                        height: 260px;
+                        margin: 3px 30px 0 2px;
+                        cursor: pointer; 
+                        img{
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
+                            width: 120px ;
+                            height: 190px; 
+                        }
+                        .add{
+                            margin-top: -5px;
+                            background-color: #fff;
+                            width: 120px;
+                            height: 69px;
+                            border-bottom-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            h3{
+                                @include flex(center, center);
+                                padding-top: 28px;
+                                color: $icon-color-dont-hover;
+                                font-family: $font-body;
+                                font-size: 18px;                        
+                            }
+                            i{
+                                position: relative;
+                                border-radius: 50%;
+                                color: #fff;
+                                padding: 5px;
+                                background-color: $icon-color;
+                                font-size: 25px;
+                                top: -59px;
+                                left: 45px;
+                            }
+                        }
+                    }
+                    .storries-useres {
+                        @include flex(space-evenly, center);
+                        img{
+                          background-clip: border-box; 
+                          width: 125px; 
+                          border-radius: 15px;
+                          margin-left: 10px;
+                        }
+                        
+                        margin: 0 5px;
+                        border-radius: 10px;
+                        width: 120px !important;
+                        height: 260px;
+                        cursor: pointer;
+                    }
+                    
+                    .storries-useres .icone-user img {
+                        border-radius: 50%;
+                        padding: 2px;
+                        border: 3px solid #1846c5;
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        cursor: pointer;
+                        top: -90px;
+                        left: -65px;
+                        z-index: 1;
+                    } 
+                    &::-webkit-scrollbar{
+                        width: 0;
+                    }
+                }
+            }
+            
+
+            .edia{
+                width: 80%;
+                background-color: #ffffff;
+                flex-direction: column;
+                margin-top: 30px;
+                margin-left: 10px;
+                padding:0 55px 0 25px;
+                border-radius: 15px;
+                .input-idia{
+                    padding: 15px 0 ;
+                    @include flex(space-between, center);
+                    img{
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    input{
+                        padding: 10px;
+                        width: 85%;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        background-color: lighten($icon-color-dont-hover,55%) ;
+                        font-size: 22px;
+                    }
+                }
+                .par{
+                    background-color: #ffff;
+                    @include flex (space-between, end);
+                    padding:15px 10px;
+                    div{
+                        cursor: pointer;
+                        i{
+                        font-size: 20px;
+                        margin-right: 5px;
+                        }
+                        span{
+                            font-size: 18px;
+                            font-family: $font-body;
+                            color: $icon-color-dont-hover;
+                            margin-right: 5px;
+                        }
+                    } 
+                    .icon-live{
+                        i{
+                            color: red;
+                        }
+                       
+                    }
+                    .icon-img{
+                        i{
+                            color: #00ff00;
+                        } 
+                    }
+                    .icon-im{
+                        i{
+                            color:rgb(207, 207, 3);
+                        }
+                       
+                    }
+                }
+                    
+            }
+
+            .publ{
+                width: 100% !important;
+                .publications{
+                    background-color: #ffff;
+                    padding: 15px;
+                    margin: 20px;
+                    border-radius: 10px;
+                    .icon-pu{
+                        @include flex (space-between, center);
+                        i{
+                            font-size: 25px;
+                            color: $icon-color-dont-hover;
+                            cursor: pointer;
+                        }
+                        .ffi{
+                            @include flex (space-between, center);
+                            img{
+                                margin-left: 5px;
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                cursor: pointer;
+                            }
+                            span{
+                                font-size: 22px;
+                                font-weight: 600;
+                                font-family: $font-body;
+                            }
+                        }
+                    }
+                    .title{
+                        margin: 10px 0;
+                        h3{
+                            text-align: end;
+                            font-weight: 700px;
+                            font-family: $font-body;
+                            font-size: 16px;
+                        }                    
+                    }
+                    .photo{
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                    }
+                    hr{
+                        margin-top: 3px;
+                    }
+                    .interaction{
+                        .pub{
+                            margin: 10px 0;
+                            @include flex(end, center);
+                            i{
+                                font-size: 20px;
+                                margin-left: 2px;
+                                cursor: pointer;
+                            }
+                            .lov{
+                                color: $icon-color;
+                            }
+                            .like{
+                                color: rgb(255, 32, 32);
+                            }
+                        }
+                        .pub-1{
+                            @include flex(space-evenly , center);
+                            div{
+                                margin-top: 5px;
+                                @include flex (center, center);
+                                cursor: pointer;
+                               i{
+                                    font-size: 25px;
+                                    color: $icon-color-dont-hover;
+                                } 
+                                span{
+                                    user-select: none;
+                                    margin-left: 3px;
+                                    color: $icon-color-dont-hover;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        &__right{
+            width: 250px;
+            .facebook-abbreviations{
+                width: 100%;
+                height: 100vh;
+                overflow-y: scroll;
+                z-index: 1; 
+                position: fixed;              
+                @include abbreviations-rigth;  
+                &::-webkit-scrollbar{
+                width: 0;
+                }
+            }
+                
+        }
+    }
+}
+
+// On passions
+@media screen and (max-width : 850px){
+    .page-content{
+        width: 100%;
+        margin-top: 50px;
+        height: auto;
+        @include flex (center, top);
+        overflow: hidden;
+        &__left{
+            display: none;
+        }
+        &__middle{
+            width:  auto;
+            max-width: 400px;
+            min-width: 300px;
+            height: auto;
+            overflow: hidden;
+
+            .all-story{
+                position: relative;
+                .i-nx-pr{
+                    .icones{
+                        .icon-previous{
+                            @include icones-nex_previous(800);
+                            left: 50px;   
+                        }
+                        .icon-nex{
+                            @include icones-nex_previous(400);
+                            right: 50px;
+                        }
+                    }    
+                }
+                .stories{
+                @include flex(start, center);
+                width: 85% !important;
+                padding: 5px;
+                margin-left: 20px;
+                overflow: hidden;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                .my-story{
+                    width: 120px;
+                    height: 260px;
+                    margin: 3px 30px 0 2px;
+                    cursor: pointer; 
+                    img{
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        width: 120px ;
+                        height: 190px; 
+                    }
+                    .add{
+                        margin-top: -5px;
+                        background-color: #fff;
+                        width: 120px;
+                        height: 69px;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        h3{
+                            @include flex(center, center);
+                            padding-top: 28px;
+                            color: $icon-color-dont-hover;
+                            font-family: $font-body;
+                            font-size: 18px;                        
+                        }
+                        i{
+                            position: relative;
+                            border-radius: 50%;
+                            color: #fff;
+                            padding: 5px;
+                            background-color: $icon-color;
+                            font-size: 25px;
+                            top: -59px;
+                            left: 45px;
+                        }
+                    }
+                }
+                .storries-useres {
+                    @include flex(space-evenly, center);
+                    img{
+                      background-clip: border-box; 
+                      width: 125px; 
+                      border-radius: 15px;
+                      margin-left: 10px;
+                    }
+                    
+                    margin: 0 5px;
+                    border-radius: 10px;
+                    width: 120px !important;
+                    height: 260px;
+                    cursor: pointer;
+                }
+                
+                .storries-useres .icone-user img {
+                    border-radius: 50%;
+                    padding: 2px;
+                    border: 3px solid #1846c5;
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    top: -90px;
+                    left: -65px;
+                    z-index: 1;
+                } 
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
+            }
+            }    
+            
+
+            .edia{
+                width: 70%;
+                background-color: #ffffff;
+                flex-direction: column;
+                margin-top: 30px;
+                padding:0 55px 0 25px;
+                border-radius: 5px;
+                margin-left: 15px;
+                .input-idia{
+                    padding: 15px 0 ;
+                    @include flex(space-between, center);
+                    img{
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    input{
+                        padding: 10px;
+                        width: 85%;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        background-color: lighten($icon-color-dont-hover,55%) ;
+                        font-size: 22px;
+                    }
+                }
+                .par{
+                    // background-color: #ffff;
+                    @include flex (space-evenly, end);
+                    padding:15px 10px;
+                    div{
+                        cursor: pointer;
+                        i{
+                        font-size: 20px;
+                        margin-right: 5px;
+                        }
+                        span{
+                            font-size: 18px;
+                            font-family: $font-body;
+                            color: $icon-color-dont-hover;
+                            margin-right: 5px;
+                        }
+                    } 
+                    .icon-live{
+                        i{
+                            color: red;
+                        }
+                       
+                    }
+                    .icon-img{
+                        i{
+                            color: #00ff00;
+                        } 
+                    }
+                    .icon-im{
+                        display: none;
+                        i{
+                            color:rgb(207, 207, 3);
+                        }
+                       
+                    }
+                }
+                    
+            }
+
+            .publ{
+                width: 100% !important;
+                .publications{
+                    background-color: #ffff;
+                    padding: 15px;
+                    margin: 20px;
+                    border-radius: 10px;
+                    .icon-pu{
+                        @include flex (space-between, center);
+                        i{
+                            font-size: 25px;
+                            color: $icon-color-dont-hover;
+                            cursor: pointer;
+                        }
+                        .ffi{
+                            @include flex (space-between, center);
+                            img{
+                                margin-left: 5px;
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                cursor: pointer;
+                            }
+                            span{
+                                font-size: 22px;
+                                font-weight: 600;
+                                font-family: $font-body;
+                            }
+                        }
+                    }
+                    .title{
+                        margin: 10px 0;
+                        h3{
+                            text-align: end;
+                            font-weight: 700px;
+                            font-family: $font-body;
+                            font-size: 16px;
+                        }                    
+                    }
+                    .photo{
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                    }
+                    hr{
+                        margin-top: 3px;
+                    }
+                    .interaction{
+                        .pub{
+                            margin: 10px 0;
+                            @include flex(end, center);
+                            i{
+                                font-size: 20px;
+                                margin-left: 2px;
+                                cursor: pointer;
+                            }
+                            .lov{
+                                color: $icon-color;
+                            }
+                            .like{
+                                color: rgb(255, 32, 32);
+                            }
+                        }
+                        .pub-1{
+                            @include flex(space-evenly , center);
+                            div{
+                                margin-top: 5px;
+                                @include flex (center, center);
+                                cursor: pointer;
+                               i{
+                                    font-size: 25px;
+                                    color: $icon-color-dont-hover;
+                                } 
+                                span{
+                                    user-select: none;
+                                    margin-left: 3px;
+                                    color: $icon-color-dont-hover;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        &__right{
+            display: none;
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

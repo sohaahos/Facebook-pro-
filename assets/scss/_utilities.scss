@@ -1,0 +1,122 @@
+$bg-color : #f0f2f5;
+$icon-color : #1877F2;
+$icon-color-hover : #f1f1f8;
+$icon-color-dont-hover : #545557;
+$font-body : 'Arial';
+
+$padding : 5px;
+
+*{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    background-color: $bg-color;
+}
+
+@mixin flex ($justify, $align ){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin iconeSearch ($color:$icon-color-dont-hover , $bg:$icon-color-hover){
+    .icone-search{
+    padding: 7px;
+    border-radius: 50%;
+    background-color: $bg;
+    font-size: 21px;
+    color: $color;
+    cursor: pointer;
+    margin-left: 5px; 
+    }
+    
+}
+
+//icon facebook
+@mixin allicon ($color , $size : 27){
+    padding: 0 8px;
+    font-size: $size+px;
+    color: $color;
+}
+
+// img user 
+@mixin img-user($radius : 50% , $width:45 , $height:45){
+    border-radius: $radius;
+    image-rendering: pixelated;
+    width: $width+px;
+    height: $height+px;
+}
+
+// service
+@mixin service ($bg-color:$icon-color-hover){
+    font-size: 26px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $bg-color;
+    margin-right: 10px;
+    &:hover{
+        background-color: darken($bg-color,5%);
+    }
+}
+
+@mixin abbreviations-rigth(){
+        .abbreviation{
+            width: 100%;
+            @include flex (start, center);
+            padding: 16px 0 ;
+            cursor: pointer;
+            border-radius: 10px;
+            &:hover{
+                background-color:darken($bg-color, 20%);
+                width: 100%;
+            }
+            img{
+                @include img-user(50%, 40, 40);
+                padding-left: 10px;
+                margin-bottom: 10px
+            }
+            i{
+                @include allicon ($icon-color,33);
+            }
+            span{
+                margin-left: 5px;
+                color: $icon-color-dont-hover;
+                font-weight: bold;
+                font-family: $font-body;
+            }
+        }
+        .section-title{
+            @include flex (start, center);
+            h3{
+                margin: 8px 0;
+                font-weight: bold;
+                color: $icon-color-dont-hover;
+                font-family: $font-body;  
+            }
+            i{
+                @include iconeSearch;
+                margin-left: 20px;
+            }
+        }
+}  
+
+//icon nex/previous
+@mixin icones-nex_previous($right: 0){
+    @include flex(center, center) ;
+    background-color: #ffffff;
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 60%;
+    color: $icon-color-dont-hover;
+    width: 10px;
+    position: absolute;
+    top: 100px;
+    right:$right+px;
+    z-index: 5;
+    cursor: pointer;
+    &:hover{
+        background-color: darken(#ffff, 10%);
+    }
+}

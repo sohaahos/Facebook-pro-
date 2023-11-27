@@ -1,0 +1,251 @@
+// On computer
+@media screen and (min-width : 1000px) {
+    .nav {
+        padding: 0 10px;
+        background-color:#fff;
+        @include flex (space-between, center);
+        box-shadow: 0 3px 5px #80808050;
+        overflow: hidden;
+        position: fixed;
+        z-index: 2;
+        width: 100vw;
+        top: 0;
+        &__left {
+            flex: 25% 0 0 ;
+            @include flex (start, center);
+            .input-box__search{
+                padding: 0 10px;
+                border-radius: 5px;
+                #search-input{
+                    padding: 15px 15px;
+                    border-radius: 20px;
+                    background: lighten($icon-color-hover, 1%);
+                    border: none;
+                    outline: none;
+                    width: auto;
+                }
+            }
+            .icone-search{display: none;}
+        }
+
+        &__middle {
+            
+            flex: 45% 0 0;
+            @include flex (center, center);
+            div:first-child{
+                padding: 12px 30px;
+                border-bottom: 3px solid $icon-color;
+                cursor: pointer;
+                i:first-child{
+                    @include allicon ($icon-color)
+                }
+            }
+            div:not(.facbook-icon__home){
+                padding: 12px 30px;
+                border-radius: 15px;
+                cursor: pointer;
+                i{
+                    @include allicon ($icon-color-dont-hover);
+                }
+                &:hover{
+                    background-color: $icon-color-hover;
+                }
+                
+            }
+        }
+
+        &__right {
+            flex: 25% 0 0 ;
+            @include flex (end , center);
+            .facebook-services{
+                @include flex (center,start);
+                width: 80%;
+                &__service{
+                    @include service ;
+                }
+                .user-icon{
+                    @include flex (center, end);
+                    background-color: #faebd700;
+                    cursor: pointer;
+                    img{
+                        @include img-user ;
+                    }
+                    .arrow-down{
+                        background-color: $icon-color-hover;
+                        padding: 0px;
+                        border-radius: 50%;
+                        position: relative;
+                        top: -1px;
+                        left: -15px; 
+                    }
+                }   
+            }
+        }
+    }
+}
+
+// On Tablets
+@media screen and (min-width : 850px) and (max-width : 1000px) {
+    .nav {
+        padding: 0 10px;
+        background-color: #fff;
+        @include flex (space-between, center);
+        box-shadow: 0 3px 5px #80808050;
+        overflow: hidden;
+        position: fixed;
+        z-index: 2;
+        width: 100vw;
+        top: 0;
+        &__left {
+            flex: 5% 0 0 ;
+            @include flex (start, center);
+            .input-box__search{
+                .div-input-search{
+                    display: none;
+                }
+            }
+            @include iconeSearch;
+        }
+    
+        &__middle {
+            flex: 60% 0 0;
+            @include flex (center, center);
+            div:first-child{
+                margin-left: 60px;
+                padding:5px 30px;
+                border-bottom: 3px solid $icon-color;
+                cursor: pointer;
+                i:first-child{
+                    padding: 0 8px;
+                    font-size: 27px;
+                    color: $icon-color;
+                    font-weight: 300;
+                }
+            }
+            div:not(.facbook-icon__home){
+                padding: 5px 30px;
+                border-radius: 15px;
+                cursor: pointer;
+                i{
+                    padding: 0 8px;
+                    font-size: 27px;
+                    color: $icon-color-dont-hover;
+                }
+                &:hover{
+                    background-color: $icon-color-hover;
+                }
+                
+            }
+        }
+    
+        &__right {
+            flex: 25% 0 0 ;
+            @include flex (end , center);
+            .facebook-services{
+                @include flex (center,start);
+                width: 80%;
+                &__service{
+                    font-size: 26px;
+                    padding: 7px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background-color: $icon-color-hover;
+                    margin-right: 10px
+                }
+                .user-icon{
+                    @include flex (center, center);
+                    background-color: #faebd700;
+                    cursor: pointer;
+                    img{
+                        @include img-user(50%, 45, 45)
+                    }
+                    .arrow-down{
+                        background-color: $icon-color-hover;
+                        padding: 0px;
+                        border-radius: 50%;
+                        position: relative;
+                        top: 15px;
+                        left: -15px; 
+                    }
+                }   
+            }
+        }
+    }
+}
+
+// On passions
+@media screen and (max-width : 850px){
+    .nav {
+        background-color: #fff;
+        @include flex (space-evenly, center);
+        box-shadow: 0 3px 5px #80808050;
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
+        z-index: 2;
+        width: 100vw;
+        top: 0;
+        &__left {
+            flex: 5% 0 0 ;
+            @include flex (start, center);
+            .input-box__search{
+                .div-input-search{
+                    display: none;
+                }
+            }
+            @include iconeSearch;
+        }
+    
+        &__middle {
+            @include flex (center, center);
+            div{
+                display: none;
+            }
+        }
+    
+        &__right {
+            flex: 50% 0 0 ;
+            @include flex (end , center);
+            .facebook-services{
+                @include flex (end,center);
+                width: 50%;
+                &__service{
+                    font-size: 24px;
+                    padding: 6px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background-color: $icon-color-hover;
+                    margin-right: 10px; 
+                }
+                .user-icon{
+                    @include flex (space-between, center);
+                    background-color: #faebd700;
+                    cursor: pointer;
+                    img{
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .arrow-down{
+                        background-color: $icon-color-hover;
+                        padding: 0px;
+                        border-radius: 50%;
+                        position: relative;
+                        top: 15px;
+                        left: -15px;
+                    }
+                }   
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
